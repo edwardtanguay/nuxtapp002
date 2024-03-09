@@ -4,5 +4,9 @@
 			<Title>Info Site</Title>
 		</Head>
 	</Html>
-	<NuxtPage />
+	<Header/>
+	<Nav />
+	<main class="py-2 px-6">
+		<NuxtPage />
+	</main>
 </template>
