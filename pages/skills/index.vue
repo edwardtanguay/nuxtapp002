@@ -1,6 +1,18 @@
 <script setup lang="ts">
-import _skills from "~/data/skills.json";
+import _rawSkills from "~/data/skills.json";
 import type { Skill } from "~/types";
+
+const _skills: Skill[] = [];
+for (const _rawSkill of _rawSkills) {
+	const _skill: Skill = {
+		idCode: _rawSkill.idCode,
+		name: _rawSkill.name,
+		url: _rawSkill.url,
+		description: _rawSkill.description,
+		importance: "somewhatUseful",
+	};
+	_skills.push(_skill);
+}
 
 const skills = ref<Skill[]>(_skills);
 const newFoundSkills = ref<Skill[]>([]);
@@ -16,9 +28,9 @@ const foundSkills = computed((): Skill[] => {
 	}
 });
 
-const findSkills = (_skills: Skill[], searchTerm: string) => {
-	return _skills.filter((m) => m.description.includes(searchTerm));
-};
+// const findSkills = (_skills: Skill[], searchTerm: string) => {
+// 	return _skills.filter((m) => m.description.includes(searchTerm));
+// };
 
 // doesn't work
 // onMounted(() => {
@@ -53,4 +65,5 @@ const findSkills = (_skills: Skill[], searchTerm: string) => {
 	</div>
 </template>
 
-<style scoped></style>~/types
+<style scoped></style>
+~/types
