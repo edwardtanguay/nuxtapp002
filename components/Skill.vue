@@ -12,8 +12,8 @@ const { skill } = defineProps<Props>();
 	<span
 		><a target="_blank" :href="skill.url" class="underline">{{
 			skill.name
-		}}</a
-		> 
+		}}</a>
+		{{ " " }}
 	</span>
 </template>
 
