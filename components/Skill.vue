@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import type { Skill } from "~/types";
+
 interface Props {
-	title: string;
+	skill: Skill;
 }
 
-const { title } = defineProps<Props>();
+const { skill } = defineProps<Props>();
 </script>
 
 <template>
-	<span>(SKILL: {{ title }}) </span>
+	<span
+		><a target="_blank" :href="skill.url" class="underline">{{
+			skill.name
+		}}</a
+		> 
+	</span>
 </template>
 
 <style scoped></style>
