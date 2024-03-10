@@ -3,6 +3,7 @@ import _skills from "~/data/skills.json";
 import type { ISkill } from "~/interfaces";
 
 const skills = ref<ISkill[]>(_skills);
+const newFoundSkills = ref<ISkill[]>([]);
 
 const foundSkills = computed((): ISkill[] => {
 	const _foundSkills = skills.value.filter((m) =>
@@ -15,6 +16,19 @@ const foundSkills = computed((): ISkill[] => {
 	}
 });
 
+const findSkills = (_skills: ISkill[], searchTerm: string) => {
+	return _skills.filter((m) => m.description.includes(searchTerm));
+};
+
+// doesn't work
+// onMounted(() => {
+// 	const route = useRoute();
+// 	const searchTerm = String(route.query.search);
+// 	console.log("searchTerm", searchTerm);
+// 	const _newFoundSkills = findSkills(skills.value, searchTerm);
+// 	console.log("_newFoundSkills", _newFoundSkills);
+// 	const newFoundSkills = ref(_newFoundSkills);
+// });
 </script>
 
 <template>
@@ -31,6 +45,11 @@ const foundSkills = computed((): ISkill[] => {
 				>({{ foundSkill.name }})
 			</span>
 		</div>
+	</div>
+	<div class="mb-5">
+		<h2 class="text-xl mb-3">
+			There are {{ newFoundSkills.length }} skills.
+		</h2>
 	</div>
 </template>
 
