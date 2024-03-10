@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
 interface Props {
 	title: string;
 }
 
-const { title } = defineProps < Props > ();
+const { title } = defineProps<Props>();
 </script>
 
 <template>
