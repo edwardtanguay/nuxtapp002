@@ -47,7 +47,9 @@ const foundSkills = computed((): Skill[] => {
 	<div class="mb-5">
 		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
 		<div>
-			<span v-for="skill in skills">({{ skill.name }}) </span>
+			<span v-for="skill in skills"
+				><Skill :title="`${skill.name}`"
+			/></span>
 		</div>
 	</div>
 	<div class="mb-5">
