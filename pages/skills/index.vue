@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import _skills from "~/data/skills.json";
-import type { ISkill } from "~/interfaces";
+import type { Skill } from "~/types";
 
-const skills = ref<ISkill[]>(_skills);
-const newFoundSkills = ref<ISkill[]>([]);
+const skills = ref<Skill[]>(_skills);
+const newFoundSkills = ref<Skill[]>([]);
 
-const foundSkills = computed((): ISkill[] => {
+const foundSkills = computed((): Skill[] => {
 	const _foundSkills = skills.value.filter((m) =>
 		m.description.includes("React")
 	);
 	if (_foundSkills) {
 		return _foundSkills;
 	} else {
-		return [] as ISkill[];
+		return [] as Skill[];
 	}
 });
 
-const findSkills = (_skills: ISkill[], searchTerm: string) => {
+const findSkills = (_skills: Skill[], searchTerm: string) => {
 	return _skills.filter((m) => m.description.includes(searchTerm));
 };
 
@@ -53,4 +53,4 @@ const findSkills = (_skills: ISkill[], searchTerm: string) => {
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped></style>~/types
