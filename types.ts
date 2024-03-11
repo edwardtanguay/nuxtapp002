@@ -1,9 +1,19 @@
+import { defineStore } from "pinia";
+
 export type Skill = {
 	idCode: string;
 	name: string;
 	url: string;
-	description: string
-	importance: Importance
-}
+	description: string;
+	importance: Importance;
+};
 
 type Importance = "veryUseful" | "somewhatUseful" | "notVeryUseful";
+
+// export type AppStore = {
+// 	state: {
+// 		skills: Skill[];
+// 	};
+// 	getters: {};
+// 	actions: {};
+// };
