@@ -10,7 +10,7 @@ const emits = defineEmits<{
 }>();
 
 const showInfo = () => {
-	console.log("in showInfo");
+	console.log("emitted event");
 	emits("show-info", "hello");
 };
 
@@ -22,7 +22,7 @@ const { skill } = defineProps<Props>();
 		><a target="_blank" :href="skill.url" class="underline">{{
 			skill.name
 		}}</a>
-		[<span @click="showInfo">show message</span>]
+		[<span @click="showInfo" class="cursor-pointer hover:underline">show message</span>]
 		{{ " " }}
 	</span>
 </template>

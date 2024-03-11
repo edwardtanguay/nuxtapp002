@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const message = ref('');
+const message = ref("");
 
 message.value = "Welcome to this site.";
+
 </script>
 <template>
-	<p>{{ message }}</p>
+  <p>{{ message }}</p>
+  
 </template>
