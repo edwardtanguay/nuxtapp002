@@ -8,9 +8,6 @@ import { appStore } from "~/stores/AppStore";
 		<span class="font-bold">Pinia store</span>.
 	</p>
 	<ClientOnly>
-		<!-- <h2 class="mb-2 text-2xl text-blue-950 mt-6">
-			{{ appStore.products.length }} Products
-		</h2> -->
 		<h2 class="mb-2 text-2xl text-blue-950">
 			{{ appStore.numberOfNotes }} Notes
 		</h2>
@@ -20,12 +17,17 @@ import { appStore } from "~/stores/AppStore";
 		<h2 class="mb-2 text-2xl text-blue-950 mt-4">
 			{{ appStore.numberOfSkills }} Skills
 		</h2>
-		<ul class="list-disc ml-6">
-			<li v-for="skill in appStore.skills" :key="skill.idCode">
-				<span class="font-semibold">{{ skill.name }}</span> -
-				{{ skill.description }}
+		<div class="">
+			<li
+				v-for="skill in appStore.skills"
+				:key="skill.idCode"
+				class="flex gap-2 mb-2"
+			>
+				<button @click="appStore.deleteSkill(skill)">delete</button>
+				<span class="font-semibold">{{ skill.name }}</span>
+				<div>{{ skill.description }}</div>
 			</li>
-		</ul>
+		</div>
 	</ClientOnly>
 </template>
 

@@ -3,11 +3,9 @@ import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
 import type { Product, Skill } from "~/types";
 
-// const {
-// 	data: products,
-// } = useFetch("https://fakestoreapi.com/products", {
+// const { data: products } = useFetch("https://fakestoreapi.com/products", {
 // 	lazy: true,
-// 	transform: (products:Product[]) => {
+// 	transform: (products: Product[]) => {
 // 		return products.map((product) => ({
 // 			id: product.id,
 // 			title: product.title,
@@ -42,7 +40,11 @@ export const appStore = defineStore("appStore", {
 		},
 		numberOfNotes: (state): number => {
 			return state.notes.length;
-		}
+		},
 	},
-	actions: {},
+	actions: {
+		deleteSkill(skill: Skill) {
+			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
+		},
+	},
 })(piniaInstance);

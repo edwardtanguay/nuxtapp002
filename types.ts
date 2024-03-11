@@ -15,3 +15,9 @@ export type Product = {
 	title: string;
 	image: string;
 }
+
+export type Noun = {
+	article: string;
+	singular: string;
+	plural: string;
+}
