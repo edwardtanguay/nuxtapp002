@@ -7,7 +7,8 @@
     "dev": "nuxt dev -p 4011 -o",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "gitnvm": "git reset --soft HEAD~1"
   },
   "dependencies": {
     "nuxt": "^3.10.3",
