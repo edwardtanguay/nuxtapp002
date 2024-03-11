@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { appStore } from "~/stores/AppStore";
+
+// this is a change
 </script>
 
 <template>
