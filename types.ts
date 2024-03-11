@@ -10,10 +10,8 @@ export type Skill = {
 
 type Importance = "veryUseful" | "somewhatUseful" | "notVeryUseful";
 
-// export type AppStore = {
-// 	state: {
-// 		skills: Skill[];
-// 	};
-// 	getters: {};
-// 	actions: {};
-// };
+export type Product = {
+	id: number;
+	title: string;
+	image: string;
+}
