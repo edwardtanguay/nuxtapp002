@@ -61,7 +61,8 @@ const handleUpdateSecondSkill = (skill: Skill, event: InputEvent) => {
 };
 
 const handleGoToSkill = (skill: Skill) => {
-	alert("going to " + skill.name);
+	console.log(`going to ${skill.name}`);
+	navigateTo(`/skill/${skill.idCode}`);
 };
 </script>
 
