@@ -59,11 +59,26 @@ const handleUpdateSecondSkill = (skill: Skill, event: InputEvent) => {
 		skill.name = (event.target as HTMLInputElement).value;
 	}
 };
+
+const handleGoToSkill = (skill: Skill) => {
+	alert("going to " + skill.name);
+};
 </script>
 
 <template>
 	<div class="mb-5">
 		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
+
+		<h2 class="text-xl mb-3">Links to individual skill pages</h2>
+		<div class="mb-6">
+			<span v-for="skill in skills"
+				>(<span
+					@click="handleGoToSkill(skill)"
+					class="hover:underline cursor-pointer"
+					>{{ skill.name }}</span
+				>)
+			</span>
+		</div>
 		<div>
 			<p class="mb-3">
 				First skill:
