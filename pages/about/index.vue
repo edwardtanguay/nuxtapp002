@@ -8,7 +8,6 @@ const {
 	lazy: false,
 });
 
-console.log("nouns", nouns);
 </script>
 
 <template>
