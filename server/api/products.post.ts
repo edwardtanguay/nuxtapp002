@@ -1,3 +1,13 @@
-export default defineEventHandler((event) => {
-	return 'you want to post a new product'
+type Product = {
+	id: number;
+	title: string;
+}
+
+export default defineEventHandler(async (event) => {
+	const product:Product = await readBody(event);
+	console.log('product: ', product);
+	console.log('product info:', `${product.title} (${product.id})`);
 });
+
+
+
