@@ -2,6 +2,14 @@
 import _rawSkills from "~/data/skills.json";
 import type { Skill } from "~/types";
 
+useSeoMeta({
+	title: "Skills",
+	ogTitle: "Skills Page",
+	description: "This is the skills page.",
+	ogDescription: "This is the skills page.",
+	ogImage: "https://tanguay-eu.vercel.app/images/outline/havethiserro.png",
+});
+
 const _skills: Skill[] = [];
 for (const _rawSkill of _rawSkills) {
 	const _skill: Skill = {
