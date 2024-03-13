@@ -2,13 +2,15 @@
 import _rawSkills from "~/data/skills.json";
 import type { Skill } from "~/types";
 
-useSeoMeta({
-	title: "Skills",
-	ogTitle: "Skills Page",
-	description: "This is the skills page.",
-	ogDescription: "This is the skills page.",
-	ogImage: "https://tanguay-eu.vercel.app/images/outline/havethiserro.png",
-});
+// doesn't work:
+
+// useSeoMeta({
+// 	title: "Skills",
+// 	ogTitle: "Skills Page",
+// 	description: "This is the skills page.",
+// 	ogDescription: "This is the skills page.",
+// 	ogImage: "https://tanguay-eu.vercel.app/images/outline/havethiserro.png",
+// });
 
 const _skills: Skill[] = [];
 for (const _rawSkill of _rawSkills) {
@@ -72,9 +74,17 @@ const handleGoToSkill = (skill: Skill) => {
 	console.log(`going to ${skill.name}`);
 	navigateTo(`/skill/${skill.idCode}`);
 };
+
+const title = 'Skills 222';
+const description = 'This is the skills page.';
 </script>
 
 <template>
+	<Head>
+		<Title>{{ title }}</Title>
+		<Meta name="description" :content="description" />
+		
+	</Head>
 	<div class="mb-5">
 		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
 
