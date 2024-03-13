@@ -67,6 +67,11 @@ const handleGoToSkill = (skill: Skill) => {
 </script>
 
 <template>
+	<Html>
+		<Head>
+			<Title>Skills</Title>
+		</Head>
+	</Html>
 	<div class="mb-5">
 		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
 
