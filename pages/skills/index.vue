@@ -12,6 +12,10 @@ import type { Skill } from "~/types";
 // 	ogImage: "https://tanguay-eu.vercel.app/images/outline/havethiserro.png",
 // });
 
+definePageMeta({
+	layout: "skills",
+});
+
 const _skills: Skill[] = [];
 for (const _rawSkill of _rawSkills) {
 	const _skill: Skill = {
@@ -75,69 +79,76 @@ const handleGoToSkill = (skill: Skill) => {
 	navigateTo(`/skill/${skill.idCode}`);
 };
 
-const title = 'Skills';
-const description = 'This is the skills page.';
+const title = "Skills";
+const description = "This is the skills page.";
 </script>
 
 <template>
 	<Head>
 		<Title>{{ title }}</Title>
 		<Meta name="description" :content="description" />
-		<meta name="image" content="https://tanguay-eu.vercel.app/images/siteIcon.png"/>
+		<meta
+			name="image"
+			content="https://tanguay-eu.vercel.app/images/siteIcon.png"
+		/>
 	</Head>
-	<div class="mb-5">
-		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
+	<NuxtLayout>
+		<div class="mb-5">
+			<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
 
-		<h2 class="text-xl mb-3">Links to individual skill pages</h2>
-		<div class="mb-6">
-			<span v-for="skill in skills"
-				>(<span
-					@click="handleGoToSkill(skill)"
-					class="hover:underline cursor-pointer"
-					>{{ skill.name }}</span
-				>)
-			</span>
+			<h2 class="text-xl mb-3">Links to individual skill pages</h2>
+			<div class="mb-6">
+				<span v-for="skill in skills"
+					>(<span
+						@click="handleGoToSkill(skill)"
+						class="hover:underline cursor-pointer"
+						>{{ skill.name }}</span
+					>)
+				</span>
+			</div>
+			<div>
+				<p class="mb-3">
+					First skill:
+					<input
+						v-model="skills[0].name"
+						ref="elemSkill1Name"
+						type="text"
+					/>
+					(Test v-model and focus)
+				</p>
+				<p class="mb-3">
+					Second skill:
+					<input
+						:value="skills[1].name"
+						@input="(e) => handleUpdateSecondSkill(skills[1], e as InputEvent)"
+						ref="elemSkill2Name"
+						type="text"
+					/>
+					(Test v-model and focus)
+				</p>
+			</div>
+			<div>
+				<span v-for="skill in skills"
+					><Skill @show-info="handleInfoShowing" :skill="skill"
+				/></span>
+			</div>
 		</div>
-		<div>
-			<p class="mb-3">
-				First skill:
-				<input
-					v-model="skills[0].name"
-					ref="elemSkill1Name"
-					type="text"
-				/>
-				(Test v-model and focus)
-			</p>
-			<p class="mb-3">
-				Second skill:
-				<input
-					:value="skills[1].name"
-					@input="(e) => handleUpdateSecondSkill(skills[1], e as InputEvent)"
-					ref="elemSkill2Name"
-					type="text"
-				/>
-				(Test v-model and focus)
-			</p>
+		<div class="mb-5">
+			<h2 class="text-xl mb-3">
+				There are {{ foundSkills.length }} skills.
+			</h2>
+			<div>
+				<span v-for="foundSkill in foundSkills"
+					>({{ foundSkill.name }})
+				</span>
+			</div>
 		</div>
-		<div>
-			<span v-for="skill in skills"
-				><Skill @show-info="handleInfoShowing" :skill="skill"
-			/></span>
+		<div class="mb-5">
+			<h2 class="text-xl mb-3">
+				There are {{ newFoundSkills.length }} skills.
+			</h2>
 		</div>
-	</div>
-	<div class="mb-5">
-		<h2 class="text-xl mb-3">There are {{ foundSkills.length }} skills.</h2>
-		<div>
-			<span v-for="foundSkill in foundSkills"
-				>({{ foundSkill.name }})
-			</span>
-		</div>
-	</div>
-	<div class="mb-5">
-		<h2 class="text-xl mb-3">
-			There are {{ newFoundSkills.length }} skills.
-		</h2>
-	</div>
+	</NuxtLayout>
 </template>
 
 <style scoped></style>

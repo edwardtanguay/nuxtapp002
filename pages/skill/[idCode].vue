@@ -6,6 +6,7 @@ definePageMeta({
 		const { idCode } = route.params;
 		return /^.{3,11}$/.test(idCode);
 	},
+	layout: "skills",
 });
 
 const route = useRoute();
@@ -18,8 +19,10 @@ const skill = appStore.skills.find((m) => m.idCode === idCode);
 		<Title>{{ skill.name }}</Title>
 		<Meta name="description" :content="skill.description" />
 	</Head>
+	<NuxtLayout>
 	<p>
 		<div class="font-bold text-2xl">{{ skill.name }}</div>
 		<div class="italic text-xl"> {{ skill.description }} </div>
 	</p>
+	</NuxtLayout>
 </template>
