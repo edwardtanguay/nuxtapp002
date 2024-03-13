@@ -19,5 +19,3 @@ const skill = appStore.skills.find((m) => m.idCode === idCode);
 		<div class="italic text-xl"> {{ skill.description }} </div>
 	</p>
 </template>
-
-<style scoped></style>
