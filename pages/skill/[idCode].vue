@@ -16,7 +16,7 @@ const skill = appStore.skills.find((m) => m.idCode === idCode);
 <template>
 	<Head>
 		<Title>{{ skill.name }}</Title>
-		<Meta name="description" :content="skill.name" />
+		<Meta name="description" :content="skill.description" />
 	</Head>
 	<p>
 		<div class="font-bold text-2xl">{{ skill.name }}</div>

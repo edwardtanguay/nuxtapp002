@@ -83,7 +83,7 @@ const description = 'This is the skills page.';
 	<Head>
 		<Title>{{ title }}</Title>
 		<Meta name="description" :content="description" />
-		<meta name="og:image" content="https://tanguay-eu.vercel.app/images/siteIcon.png"/>
+		<meta name="image" content="https://tanguay-eu.vercel.app/images/siteIcon.png"/>
 	</Head>
 	<div class="mb-5">
 		<h2 class="text-xl mb-3">There are {{ skills.length }} skills.</h2>
