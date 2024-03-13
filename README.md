@@ -4,6 +4,10 @@ This site is a application to try out, experiment with and showcase Nuxt feature
 
 ![grafik](https://github.com/edwardtanguay/nuxt-learning-showcase/assets/446574/509ff0b6-0c01-45e6-aa18-07a23fb25650)
 
+## live site
+
+- https://nuxt-learning-showcase.vercel.app
+
 ## setup
 
 - `npm i`
