@@ -12,4 +12,7 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 		},
 	},
+	app: {
+		layoutTransition: { name: "layout", mode: "out-in" },
+	},
 });
