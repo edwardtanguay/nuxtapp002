@@ -1,10 +1,10 @@
 <template>
 	<Html>
 		<Head>
-			<Title>Info Site</Title>
+			<Title>Nuxt Learning Showcase</Title>
 		</Head>
 	</Html>
-	<Header/>
+	<Header />
 	<Nav />
 	<main class="py-2 px-6">
 		<NuxtPage />
