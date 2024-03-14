@@ -1,34 +1,8 @@
 import { defineStore } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
-import type { AppStore, Product, Skill } from "~/types";
+import type { AppStore, Skill } from "~/types";
 import axios from "axios";
-
-// const { data: products } = useFetch("https://fakestoreapi.com/products", {
-// 	lazy: true,
-// 	transform: (products: Product[]) => {
-// 		return products.map((product) => ({
-// 			id: product.id,
-// 			title: product.title,
-// 			image: product.image,
-// 		}));
-// 	},
-// });
-// console.log("products", products);
-
-// const _skills: Skill[] = [];
-// for (const _rawSkill of _rawSkills) {
-// 	const _skill: Skill = {
-// 		idCode: _rawSkill.idCode,
-// 		name: _rawSkill.name,
-// 		url: _rawSkill.url,
-// 		description: _rawSkill.description,
-// 		importance: "somewhatUseful",
-// 	};
-// 	_skills.push(_skill);
-// }
-
-// const skills = ref<Skill[]>(_skills);
 
 export const appStore = defineStore("appStore", {
 	state: (): AppStore => ({

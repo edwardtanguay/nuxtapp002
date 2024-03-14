@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { appStore } from "~/stores/AppStore";
-
 </script>
 
 <template>
 	<p class="mb-3">
-		This page demonstrates how use data from the
+		This page demonstrates how to use data from the
 		<span class="font-bold">Pinia store</span>.
 	</p>
 	<ClientOnly>
@@ -15,10 +14,17 @@ import { appStore } from "~/stores/AppStore";
 		<ul class="list-disc ml-6">
 			<li v-for="note in appStore.notes" :key="note">{{ note }}</li>
 		</ul>
-		<h2 class="mb-2 text-2xl text-blue-950 mt-4">
-			{{ appStore.numberOfSkills }} Skills
+		<h2
+			v-if="appStore.skills.length === 0"
+			class="mb-2 text-2xl text-blue-950 mt-4"
+		>
+			<Icon name="svg-spinners:clock" class="text-3xl" /> Loading
+			skills...
 		</h2>
-		<div class="">
+		<div v-if="appStore.skills.length !== 0">
+			<h2 class="mb-2 text-2xl text-blue-950 mt-4">
+				{{ appStore.numberOfSkills }} Skills
+			</h2>
 			<li
 				v-for="skill in appStore.skills"
 				:key="skill.idCode"
@@ -32,5 +38,3 @@ import { appStore } from "~/stores/AppStore";
 		</div>
 	</ClientOnly>
 </template>
-
-<style scoped></style>

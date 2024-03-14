@@ -15,4 +15,5 @@ export default defineNuxtConfig({
 	app: {
 		layoutTransition: { name: "layout", mode: "out-in" },
 	},
+	modules: ["nuxt-icon"],
 });
