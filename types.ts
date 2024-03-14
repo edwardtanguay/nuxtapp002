@@ -1,24 +1,15 @@
-type Importance = "veryUseful" | "somewhatUseful" | "notVeryUseful";
+import { z } from 'zod';
 
-export type Skill = {
-	idCode: string;
-	name: string;
-	url: string;
-	description: string;
-	rank: number;
-};
+export const SkillSchema = z.object({
+	idCode: z.string(),
+	name: z.string(),
+	url: z.string(),
+	description: z.string(),
+	rank: z.number(),
 
-export type Product = {
-	id: number;
-	title: string;
-	image: string;
-}
+})
 
-export type Noun = {
-	article: string;
-	singular: string;
-	plural: string;
-}
+export type Skill = z.infer<typeof SkillSchema>;
 
 export type AppStore = {
 	skills: Skill[];

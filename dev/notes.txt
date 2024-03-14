@@ -23,3 +23,15 @@
 // }
 
 // const skills = ref<Skill[]>(_skills);
+
+export type Product = {
+	id: number;
+	title: string;
+	image: string;
+}
+
+export type Noun = {
+	article: string;
+	singular: string;
+	plural: string;
+}
