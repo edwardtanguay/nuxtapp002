@@ -5,7 +5,7 @@ export const SkillSchema = z.object({
 	name: z.string(),
 	url: z.string(),
 	description: z.string(),
-	rank: z.number(),
+	rank: z.number().min(1).max(5),
 
 })
 
