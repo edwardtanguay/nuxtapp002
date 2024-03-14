@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
 import type { AppStore, Skill } from "~/types";
-import axios from "axios";
+import { getSkills } from "./AppModel";
 
 export const appStore = defineStore("appStore", {
 	state: (): AppStore => ({
@@ -22,12 +22,7 @@ export const appStore = defineStore("appStore", {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
 		},
 		async fill() {
-			setTimeout(async () => {
-				const response = await axios.get(
-					"https://edwardtanguay.vercel.app/share/skills.json"
-				);
-				this.skills = response.data;
-			}, 3000);
+			this.skills = await getSkills();
 		},
 	},
 })(piniaInstance);
