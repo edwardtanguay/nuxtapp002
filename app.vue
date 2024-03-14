@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { appStore } from "~/stores/AppStore";
+
+appStore.fill();
+</script>
 <template>
 	<Html>
 		<Head>

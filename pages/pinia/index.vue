@@ -27,6 +27,7 @@ import { appStore } from "~/stores/AppStore";
 				<button @click="appStore.deleteSkill(skill)">delete</button>
 				<span class="font-semibold">{{ skill.name }}</span>
 				<div>{{ skill.description }}</div>
+				<div>IMPORTANCE: [{{ skill.importance }}]</div>
 			</li>
 		</div>
 	</ClientOnly>

@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
-import type { Product, Skill } from "~/types";
+import type { AppStore, Product, Skill } from "~/types";
+import axios from "axios";
 
 // const { data: products } = useFetch("https://fakestoreapi.com/products", {
 // 	lazy: true,
@@ -15,23 +16,23 @@ import type { Product, Skill } from "~/types";
 // });
 // console.log("products", products);
 
-const _skills: Skill[] = [];
-for (const _rawSkill of _rawSkills) {
-	const _skill: Skill = {
-		idCode: _rawSkill.idCode,
-		name: _rawSkill.name,
-		url: _rawSkill.url,
-		description: _rawSkill.description,
-		importance: "somewhatUseful",
-	};
-	_skills.push(_skill);
-}
+// const _skills: Skill[] = [];
+// for (const _rawSkill of _rawSkills) {
+// 	const _skill: Skill = {
+// 		idCode: _rawSkill.idCode,
+// 		name: _rawSkill.name,
+// 		url: _rawSkill.url,
+// 		description: _rawSkill.description,
+// 		importance: "somewhatUseful",
+// 	};
+// 	_skills.push(_skill);
+// }
 
-const skills = ref<Skill[]>(_skills);
+// const skills = ref<Skill[]>(_skills);
 
 export const appStore = defineStore("appStore", {
-	state: () => ({
-		skills,
+	state: (): AppStore => ({
+		skills: [],
 		notes: ["note one", "note two", "note three"],
 	}),
 	getters: {
@@ -45,6 +46,14 @@ export const appStore = defineStore("appStore", {
 	actions: {
 		deleteSkill(skill: Skill) {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
+		},
+		async fill() {
+			setTimeout(async () => {
+				const response = await axios.get(
+					"https://edwardtanguay.vercel.app/share/skills.json"
+				);
+				this.skills = response.data;
+			}, 3000);
 		},
 	},
 })(piniaInstance);

@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+type Importance = "veryUseful" | "somewhatUseful" | "notVeryUseful";
 
 export type Skill = {
 	idCode: string;
@@ -7,8 +7,6 @@ export type Skill = {
 	description: string;
 	importance: Importance;
 };
-
-type Importance = "veryUseful" | "somewhatUseful" | "notVeryUseful";
 
 export type Product = {
 	id: number;
@@ -20,4 +18,9 @@ export type Noun = {
 	article: string;
 	singular: string;
 	plural: string;
+}
+
+export type AppStore = {
+	skills: Skill[];
+	notes: string[];
 }
