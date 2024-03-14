@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
 import type { AppStore, Skill } from "~/types";
-import { getSkills } from "./AppModel";
+import * as AppModel from "./AppModel";
 
 export const appStore = defineStore("appStore", {
 	state: (): AppStore => ({
@@ -22,7 +22,7 @@ export const appStore = defineStore("appStore", {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
 		},
 		async fill() {
-			this.skills = await getSkills();
+			this.skills = await AppModel.getSkills();
 		},
 	},
 })(piniaInstance);

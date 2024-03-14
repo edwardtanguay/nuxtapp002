@@ -5,7 +5,7 @@ export type Skill = {
 	name: string;
 	url: string;
 	description: string;
-	importance: Importance;
+	rank: number;
 };
 
 export type Product = {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { Skill } from "~/types";
+import * as tools from "~/tools";
 
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
@@ -17,7 +18,7 @@ export const getSkills = async () => {
 						name: rawSkill.name,
 						url: rawSkill.url,
 						description: rawSkill.description,
-						importance: "somewhatUseful",
+						rank: tools.getRandomNumber(1,5)
 					};
 					skills.push(_skill);
 				}
