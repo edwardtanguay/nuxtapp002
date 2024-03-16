@@ -1,5 +1,5 @@
-import * as lowdb from '../../dataSources/lowdb';
+import * as db from '../../dataSources/lowdb';
 
 export default defineEventHandler((event) => {
-	return lowdb.getAllJobs();
+	return db.getAllJobs();
 });
