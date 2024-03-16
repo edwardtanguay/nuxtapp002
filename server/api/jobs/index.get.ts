@@ -1,3 +1,5 @@
+import * as lowdb from '../../dataSources/lowdb';
+
 export default defineEventHandler((event) => {
-	return [1,2,3]
+	return lowdb.getAllJobs();
 });
