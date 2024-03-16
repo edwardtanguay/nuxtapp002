@@ -11,6 +11,7 @@
     "gitnvm": "git reset --soft HEAD~1"
   },
   "dependencies": {
+    "axios": "^1.6.8",
     "nuxt": "^3.10.3",
     "pinia": "^2.1.7",
     "sass": "^1.71.1",

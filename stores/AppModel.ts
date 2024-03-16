@@ -1,13 +1,17 @@
 import { SkillSchema, type Skill } from "~/types";
 import * as tools from "~/tools";
+import axios from 'axios';
 
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
 		try {
 			const url = "https://edwardtanguay.vercel.app/share/skills.json";
-			setTimeout(async () => {
-				const { data: rawSkillsObj } = await useFetch(url);
-				const rawSkills = toRaw(rawSkillsObj.value) as any[];
+			(async () => {
+				// const { data: rawSkillsObj } = await useFetch(url);
+				// const rawSkills = toRaw(rawSkillsObj.value) as any[];
+				const response = await axios.get(url);
+				const rawSkills = response.data;
+
 				console.log('rawSkills', rawSkills);
 				const skills: Skill[] = [];
 				for (const rawSkill of rawSkills) {
@@ -31,7 +35,7 @@ export const getSkills = async () => {
 					}
 				}
 				resolve(skills);
-			}, 1000);
+			})();
 		} catch (e) {
 			reject(e);
 		}
