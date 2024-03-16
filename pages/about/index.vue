@@ -17,9 +17,12 @@ const newAppMessage = ref("");
 const handleAppMessageform = () => {
 	// appStore.setAppMessage(newAppMessage.value); // also works
 	appStore.appMessage = newAppMessage.value;
-}
+};
 
 // const appName = useState("appName");
+
+const randomLimit = 4;
+const randomNumber = Math.floor(Math.random() * randomLimit) + 1;
 </script>
 
 <template>
@@ -47,10 +50,12 @@ const handleAppMessageform = () => {
 					This is the second area.
 				</div>
 			</div>
+			<h2 class="text-2xl mt-4">Random number between 1 and {{ randomLimit }}</h2>
+			<p>{{ randomNumber }}</p>
 		</section>
 		<section>
 			<form @submit.prevent="handleAppMessageform" class="flex gap-2">
-				<input v-model="newAppMessage"/>
+				<input placeholder="new app message" v-model="newAppMessage" />
 				<button class="text-xs">Submit</button>
 			</form>
 		</section>
