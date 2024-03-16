@@ -12,28 +12,49 @@ const { data: nouns } = useFetch<Noun[]>(
 
 const areaToShow = ref<Area>("firstArea");
 
+const newAppMessage = ref("");
+
+const handleAppMessageform = () => {
+	// appStore.setAppMessage(newAppMessage.value); // also works
+	appStore.appMessage = newAppMessage.value;
+}
+
 // const appName = useState("appName");
 </script>
 
 <template>
-	<p>This is the about page.</p>
-	<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
-	<p>This is a test of {{ upperCaseIt("tools") }}.</p>
-	<!-- <p>appName: {{ appName }}</p> -->
-	<p class="mt-4">appMessage: {{ appStore.appMessage }}</p>
-	<button
-		@click="appStore.appMessage = '(appMessage was changed)'"
-		class="mt-4"
-	>
-		change appMessage
-	</button>
-	<h2 class="text-2xl mt-4">Areas</h2>
-	<div class="flex gap-1">
-		<button @click="areaToShow = 'firstArea'">First</button>
-		<button @click="areaToShow = 'secondArea'">Second</button>
-		<div v-if="areaToShow === 'firstArea'">This is the first area.</div>
-		<div v-if="(areaToShow === 'secondArea')">This is the second area.</div>
-	</div>
+	<main class="grid grid-cols-3 gap-4">
+		<section class="bg-slate-400 col-span-1 p-6 rounded">
+			<p>This is the about page.</p>
+			<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
+			<p>This is a test of {{ upperCaseIt("tools") }}.</p>
+			<!-- <p>appName: {{ appName }}</p> -->
+			<p class="mt-4">appMessage: {{ appStore.appMessage }}</p>
+			<button
+				@click="appStore.appMessage = '(appMessage was changed)'"
+				class="mt-4"
+			>
+				change appMessage
+			</button>
+			<h2 class="text-2xl mt-4">Areas</h2>
+			<div class="flex gap-1">
+				<button @click="areaToShow = 'firstArea'">First</button>
+				<button @click="areaToShow = 'secondArea'">Second</button>
+				<div v-if="areaToShow === 'firstArea'">
+					This is the first area.
+				</div>
+				<div v-if="areaToShow === 'secondArea'">
+					This is the second area.
+				</div>
+			</div>
+		</section>
+		<section>
+			<form @submit.prevent="handleAppMessageform" class="flex gap-2">
+				<input v-model="newAppMessage"/>
+				<button class="text-xs">Submit</button>
+			</form>
+		</section>
+	</main>
 </template>
 
 <style scoped></style>

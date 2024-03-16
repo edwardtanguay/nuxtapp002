@@ -28,5 +28,8 @@ export const appStore = defineStore("appStore", {
 		async fill() {
 			this.skills = await AppModel.getSkills();
 		},
+		setAppMessage(text: string) {
+			this.appMessage = text;
+		}
 	},
 })(piniaInstance);
