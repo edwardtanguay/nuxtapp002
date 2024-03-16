@@ -31,7 +31,7 @@ export const getSkills = async () => {
 					}
 				}
 				resolve(skills);
-			}, 0);
+			}, 1000);
 		} catch (e) {
 			reject(e);
 		}
