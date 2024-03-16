@@ -25,16 +25,19 @@ export type Noun = {
 
 export type Area = "firstArea" | "secondArea";
 
-export type Job = {
-	id: number;
+export type NewJob = {
 	title: string;
 	company: string;
 	url: string;
 	description: string;
 	skillList: string;
 	publicationDate: string;
-}
+};
+
+export type Job = NewJob & {
+	id: number;
+};
 
 export type Database = {
 	jobs: Job[];
-}
+};

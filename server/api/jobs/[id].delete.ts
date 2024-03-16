@@ -1,5 +1,5 @@
 import * as db from '../../dataSources/lowdb';
-
 export default defineEventHandler((event) => {
-	return db.getAllJobs();
+	const id = Number(getRouterParams(event).id);
+	return db.deleteJob(id);
 });
