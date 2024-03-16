@@ -1,6 +1,5 @@
 import { SkillSchema, type Skill } from "~/types";
 import * as tools from "~/tools";
-import axios from "axios";
 
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
@@ -11,12 +10,7 @@ export const getSkills = async () => {
 				// const { data: rawSkillsObj } = await useFetch(url);
 				// const rawSkills = toRaw(rawSkillsObj.value) as any[];
 
-				// axios
-				// const response = await axios.get(url);
-				// const rawSkills = response.data;
-
 				// useAsyncData
-
 				// const { data } = await useAsyncData('rawSkills', async () => {
 				// 	const [data] = await Promise.all([
 				// 		$fetch(url)
@@ -26,10 +20,13 @@ export const getSkills = async () => {
 				// const rawSkills = ((toRaw(data.value)) as unknown as any[]).data;
 				// console.log('data', data);
 
+				// axios
+				// const response = await axios.get(url);
+				// const rawSkills = response.data;
+
+				// $fetch
 				const rawSkills: any[] = await $fetch(url);
 
-				// console.log("data", data);
-				// console.log("rawSkills", rawSkills);
 				const skills: Skill[] = [];
 				for (const rawSkill of rawSkills) {
 					const skill: Skill = {

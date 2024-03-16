@@ -42,8 +42,8 @@ const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 			</button>
 			<h2 class="text-2xl mt-4">Areas</h2>
 			<div class="flex gap-1">
-				<button @click="areaToShow = 'firstArea'">First</button>
-				<button @click="areaToShow = 'secondArea'">Second</button>
+				<button :class="areaToShow === 'firstArea' && 'text-yellow-200'" @click="areaToShow = 'firstArea'">First</button>
+				<button :class="areaToShow === 'secondArea' && 'text-yellow-200'" @click="areaToShow = 'secondArea'">Second</button>
 				<div v-if="areaToShow === 'firstArea'">
 					This is the first area.
 				</div>
