@@ -21,8 +21,8 @@ const handleAppMessageform = () => {
 
 // const appName = useState("appName");
 
-const randomLimit = 4;
-const randomNumber = Math.floor(Math.random() * randomLimit) + 1;
+const randomLimit = ref(4);
+const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const randomNumber = Math.floor(Math.random() * randomLimit) + 1;
 			<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
 			<p>This is a test of {{ upperCaseIt("tools") }}.</p>
 			<!-- <p>appName: {{ appName }}</p> -->
-			<p class="mt-4">appMessage: {{ appStore.appMessage }}</p>
+			<!-- <p class="mt-4">appMessage: {{ appStore.appMessage }}</p> -->
 			<button
 				@click="appStore.appMessage = '(appMessage was changed)'"
 				class="mt-4"
@@ -51,7 +51,7 @@ const randomNumber = Math.floor(Math.random() * randomLimit) + 1;
 				</div>
 			</div>
 			<h2 class="text-2xl mt-4">Random number between 1 and {{ randomLimit }}</h2>
-			<p>{{ randomNumber }}</p>
+			<!-- <p>{{ randomNumber }}</p> -->
 		</section>
 		<section>
 			<form @submit.prevent="handleAppMessageform" class="flex gap-2">
