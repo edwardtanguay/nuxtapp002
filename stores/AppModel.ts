@@ -6,7 +6,7 @@ export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
 		try {
 			const url = "https://edwardtanguay.vercel.app/share/skills.json";
-			(async () => {
+			setTimeout(async () => {
 				// const { data: rawSkillsObj } = await useFetch(url);
 				// const rawSkills = toRaw(rawSkillsObj.value) as any[];
 				const response = await axios.get(url);
@@ -35,7 +35,7 @@ export const getSkills = async () => {
 					}
 				}
 				resolve(skills);
-			})();
+			}, 3000);
 		} catch (e) {
 			reject(e);
 		}
