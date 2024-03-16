@@ -28,7 +28,7 @@ const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 <template>
 	<main class="grid grid-cols-3 gap-4">
 		<section class="bg-slate-400 col-span-1 p-6 rounded">
-			<p>axios with 3 seconds wait</p>
+			<p>try useAsyncData</p>
 			<p>This is the about page.</p>
 			<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
 			<p>This is a test of {{ upperCaseIt("tools") }}.</p>
