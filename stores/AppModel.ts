@@ -6,7 +6,7 @@ export const getSkills = async () => {
 		try {
 			const url = "https://edwardtanguay.vercel.app/share/skills.json";
 			setTimeout(async () => {
-				const { data: rawSkillsObj } = await useLazyFetch(url);
+				const { data: rawSkillsObj } = await useFetch(url);
 				const rawSkills = toRaw(rawSkillsObj.value) as any[];
 				console.log('rawSkills', rawSkills);
 				const skills: Skill[] = [];

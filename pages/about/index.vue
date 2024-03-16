@@ -3,12 +3,12 @@ import { upperCaseIt } from "~/tools";
 import type { Area, Noun } from "~/types";
 import { appStore } from "~/stores/AppStore";
 
-// const { data: nouns } = useFetch<Noun[]>(
-// 	"https://edwardtanguay.vercel.app/share/germanNouns.json",
-// 	{
-// 		lazy: true,
-// 	}
-// );
+const { data: nouns } = useFetch<Noun[]>(
+	"https://edwardtanguay.vercel.app/share/germanNouns.json",
+	{
+		lazy: false,
+	}
+);
 
 const areaToShow = ref<Area>("firstArea");
 
@@ -28,12 +28,12 @@ const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 <template>
 	<main class="grid grid-cols-3 gap-4">
 		<section class="bg-slate-400 col-span-1 p-6 rounded">
-			<p>lazy = true</p>
+			<p>using useFetch</p>
 			<p>This is the about page.</p>
-			<!-- <p v-if="nouns">There are {{ nouns.length }} nouns.</p> -->
+			<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
 			<p>This is a test of {{ upperCaseIt("tools") }}.</p>
 			<!-- <p>appName: {{ appName }}</p> -->
-			<!-- <p class="mt-4">appMessage: {{ appStore.appMessage }}</p> -->
+			<p class="mt-4">appMessage: {{ appStore.appMessage }}</p>
 			<button
 				@click="appStore.appMessage = '(appMessage was changed)'"
 				class="mt-4"
@@ -51,8 +51,10 @@ const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 					This is the second area.
 				</div>
 			</div>
-			<h2 class="text-2xl mt-4">Random number between 1 and {{ randomLimit }}</h2>
-			<!-- <p>{{ randomNumber }}</p> -->
+			<h2 class="text-2xl mt-4">
+				Random number between 1 and {{ randomLimit }}
+			</h2>
+			<p>{{ randomNumber }}</p>
 		</section>
 		<section>
 			<form @submit.prevent="handleAppMessageform" class="flex gap-2">
