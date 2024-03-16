@@ -3,12 +3,12 @@ import { upperCaseIt } from "~/tools";
 import type { Area, Noun } from "~/types";
 import { appStore } from "~/stores/AppStore";
 
-const { data: nouns } = useFetch<Noun[]>(
-	"https://edwardtanguay.vercel.app/share/germanNouns.json",
-	{
-		lazy: true,
-	}
-);
+// const { data: nouns } = useFetch<Noun[]>(
+// 	"https://edwardtanguay.vercel.app/share/germanNouns.json",
+// 	{
+// 		lazy: true,
+// 	}
+// );
 
 const areaToShow = ref<Area>("firstArea");
 
@@ -30,7 +30,7 @@ const randomNumber = ref(Math.floor(Math.random() * randomLimit.value) + 1);
 		<section class="bg-slate-400 col-span-1 p-6 rounded">
 			<p>lazy = true</p>
 			<p>This is the about page.</p>
-			<p v-if="nouns">There are {{ nouns.length }} nouns.</p>
+			<!-- <p v-if="nouns">There are {{ nouns.length }} nouns.</p> -->
 			<p>This is a test of {{ upperCaseIt("tools") }}.</p>
 			<!-- <p>appName: {{ appName }}</p> -->
 			<!-- <p class="mt-4">appMessage: {{ appStore.appMessage }}</p> -->
