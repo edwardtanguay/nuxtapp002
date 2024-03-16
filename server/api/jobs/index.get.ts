@@ -1,5 +1,6 @@
-import * as db from '../../dataSources/lowdb';
+// import * as db from '../../dataSources/lowdb';
+import {getAllJobs} from '../../dataSources/lowdb';
 
 export default defineEventHandler((event) => {
-	return db.getAllJobs();
+	return getAllJobs();
 });

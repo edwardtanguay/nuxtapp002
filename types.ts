@@ -23,3 +23,16 @@ export type Noun = {
 };
 
 export type Area = "firstArea" | "secondArea";
+
+export type Job = {
+	id: number;
+	title: string;
+	url: string;
+	description: string;
+	skillList: string;
+	publicationDate: string;
+}
+
+export type Database = {
+	jobs: Job[];
+}
