@@ -14,6 +14,7 @@ export type AppStore = {
 	skills: Skill[];
 	notes: string[];
 	appMessage: string;
+	jobs: Job[];
 };
 
 export type Noun = {
@@ -27,6 +28,7 @@ export type Area = "firstArea" | "secondArea";
 export type Job = {
 	id: number;
 	title: string;
+	company: string;
 	url: string;
 	description: string;
 	skillList: string;

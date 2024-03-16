@@ -36,3 +36,23 @@ export type Noun = {
 	singular: string;
 	plural: string;
 }
+	
+				// useFetch
+				// const { data: rawSkillsObj } = await useFetch(url);
+				// const rawSkills = toRaw(rawSkillsObj.value) as any[];
+
+				// useAsyncData
+				// const { data } = await useAsyncData('rawSkills', async () => {
+				// 	const [data] = await Promise.all([
+				// 		$fetch(url)
+				// 	])
+				// 	return { data }
+				// });
+				// const rawSkills = ((toRaw(data.value)) as unknown as any[]).data;
+				// console.log('data', data);
+
+				// axios
+				// const response = await axios.get(url);
+				// const rawSkills = response.data;
+
+				// $fetch
