@@ -1,16 +1,14 @@
-import axios from "axios";
 import { SkillSchema, type Skill } from "~/types";
 import * as tools from "~/tools";
 
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
 		try {
+			const url = "https://edwardtanguay.vercel.app/share/skills.json";
 			setTimeout(async () => {
-				const rawSkills = (
-					await axios.get(
-						"https://edwardtanguay.vercel.app/share/skills.json"
-					)
-				).data;
+				const { data: rawSkillsObj } = await useLazyFetch(url);
+				const rawSkills = toRaw(rawSkillsObj.value) as any[];
+				console.log('rawSkills', rawSkills);
 				const skills: Skill[] = [];
 				for (const rawSkill of rawSkills) {
 					const skill: Skill = {

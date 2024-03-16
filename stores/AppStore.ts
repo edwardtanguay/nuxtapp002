@@ -8,6 +8,7 @@ export const appStore = defineStore("appStore", {
 	state: (): AppStore => ({
 		skills: [],
 		notes: ["note one", "note two", "note three"],
+		appMessage: "this is the default app message"
 	}),
 	getters: {
 		numberOfSkills: (state): number => {
@@ -15,6 +16,9 @@ export const appStore = defineStore("appStore", {
 		},
 		numberOfNotes: (state): number => {
 			return state.notes.length;
+		},
+		getSkillsByRank() {
+			return (rank: number) => this.skills.filter((m) => m.rank === rank);
 		},
 	},
 	actions: {
