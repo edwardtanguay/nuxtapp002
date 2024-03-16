@@ -44,7 +44,7 @@ export const getSkills = async () => {
 							skill.rank = 5;
 							skills.push(skill);
 						} else {
-							console.log(`BAD SKILL: ${JSON.stringify(skill)}`);
+							// console.log(`BAD SKILL: ${JSON.stringify(skill)}`);
 						}
 					}
 				}

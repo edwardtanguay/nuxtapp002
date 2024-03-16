@@ -8,6 +8,7 @@
 		<li><NuxtLink to="/usestate">useState</NuxtLink></li>
 		<li><NuxtLink to="/composables">Composables</NuxtLink></li>
 		<li><NuxtLink to="/fetching">Fetching</NuxtLink></li>
+		<li><NuxtLink to="/jobs">Jobs</NuxtLink></li>
 		<li><NuxtLink to="/about">About</NuxtLink></li>
 	</ul>
 </template>
