@@ -51,6 +51,7 @@ export const getFrontendJobs = async () => {
 				const rawJobs: any[] = await $fetch(url);
 				const jobs = buildJobsFromRawJobs(rawJobs);
 				const frontendJobs = buildFrontendJobsFromJobs(jobs);
+				tools.devLog(`there are ${frontendJobs.length} jobs`)
 				resolve(frontendJobs);
 			} catch (e) {
 				reject(e);

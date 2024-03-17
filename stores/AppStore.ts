@@ -1,8 +1,14 @@
-import { defineStore } from "pinia";
+import { defineStore, acceptHMRUpdate } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
 import type { AppStore, Skill } from "~/types";
 import * as AppModel from "./AppModel";
+
+export const useAuth = defineStore("auth", {});
+
+if (import.meta.hot) {
+	import.meta.hot.accept(acceptHMRUpdate(useAuth, import.meta.hot));
+}
 
 export const appStore = defineStore("appStore", {
 	state: (): AppStore => ({
@@ -20,6 +26,9 @@ export const appStore = defineStore("appStore", {
 		},
 		getSkillsByRank() {
 			return (rank: number) => this.skills.filter((m) => m.rank === rank);
+		},
+		getFrontendJobs() {
+			return () => this.frontendJobs;
 		},
 	},
 	actions: {
