@@ -1,10 +1,10 @@
 - x blank jobs site
 - x set up lowdb api
 - x display on jobs site
-- .. implement: job, newJob (no id), frontendJobs (isOpen)
+- .. implement: job, newJob (no id), frontendJobs (isOpen) with Zod (repeated)
+- implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
 - job isOpen and delete
 
-- implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
 - implememnt Pinia, have jobs that you don't load or fix
 
 - make delete on frontend as on vue showcase

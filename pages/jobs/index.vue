@@ -3,15 +3,15 @@ import { appStore } from "~/stores/AppStore";
 </script>
 
 <template>
-	<div v-if="appStore.skills.length === 0">Loading...</div>
-	<div v-if="appStore.skills.length > 0">
+	<div v-if="appStore.frontendJobs.length === 0">Loading...</div>
+	<div v-if="appStore.frontendJobs.length > 0">
 		<h2 class="mb-2 text-2xl text-blue-950">
-			{{ appStore.jobs.length }} Jobs
+			{{ appStore.frontendJobs.length }} Jobs
 		</h2>
 		<ul>
-			<li v-for="job in appStore.jobs">
-				<span class="font-semibold">{{ job.title }}</span> -
-				{{ job.company }}
+			<li v-for="frontendJob in appStore.frontendJobs">
+				<span class="font-semibold">{{ frontendJob.title }}</span> -
+				{{ frontendJob.company }}
 			</li>
 		</ul>
 	</div>

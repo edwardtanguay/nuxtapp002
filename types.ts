@@ -14,7 +14,7 @@ export type AppStore = {
 	skills: Skill[];
 	notes: string[];
 	appMessage: string;
-	jobs: Job[];
+	frontendJobs: FrontendJob[];
 };
 
 export type Noun = {
@@ -25,24 +25,41 @@ export type Noun = {
 
 export type Area = "firstArea" | "secondArea";
 
-export type NewJob = {
-	title: string;
-	company: string;
-	url: string;
-	description: string;
-	skillList: string;
-	publicationDate: string;
-};
+// JOB
+export const NewJobSchema = z.object({
+	title: z.string(),
+	company: z.string(),
+	url: z.string().url(),
+	description: z.string(),
+	skillList: z.string(),
+	publicationDate: z.string(),
+});
+export type NewJob = z.infer<typeof NewJobSchema>;
 
-export type Job = NewJob & {
-	id: number;
-};
+export const JobSchema = z.object({
+	id: z.number(),
+	title: z.string(),
+	company: z.string(),
+	url: z.string().url(),
+	description: z.string(),
+	skillList: z.string(),
+	publicationDate: z.string(),
+});
+export type Job = z.infer<typeof JobSchema>;
 
-export type FrontendJob = Job & {
-	isOpen: false;
-	userIsDeleting: false;
-	isProcessing: false;
-}
+export const FrontendJobSchema = z.object({
+	id: z.number(),
+	title: z.string(),
+	company: z.string(),
+	url: z.string().url(),
+	description: z.string(),
+	skillList: z.string(),
+	publicationDate: z.string(),
+	isOpen: z.boolean(),
+	userIsDeleting: z.boolean(),
+	isProcessing: z.boolean(),
+});
+export type FrontendJob = z.infer<typeof FrontendJobSchema>;
 
 export type Database = {
 	jobs: Job[];
