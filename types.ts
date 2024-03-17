@@ -38,6 +38,12 @@ export type Job = NewJob & {
 	id: number;
 };
 
+export type FrontendJob = Job & {
+	isOpen: false;
+	userIsDeleting: false;
+	isProcessing: false;
+}
+
 export type Database = {
 	jobs: Job[];
 };

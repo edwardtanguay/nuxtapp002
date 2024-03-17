@@ -2,7 +2,11 @@
 - x set up lowdb api
 - x display on jobs site
 - .. implement: job, newJob (no id), frontendJobs (isOpen)
+- job isOpen and delete
+
+- implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
 - implememnt Pinia, have jobs that you don't load or fix
+
 - make delete on frontend as on vue showcase
 - make local/online versions
 - change to skills and frontendSkills
@@ -15,3 +19,4 @@
 	- add
 - make MongoDB solution
 - create datapod core and implement
+- ** datapod: add books.dpod.txt file, can immediately edit
