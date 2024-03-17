@@ -9,7 +9,7 @@ export const appStore = defineStore("appStore", {
 		skills: [],
 		notes: ["note one", "note two", "note three"],
 		appMessage: "this is the default app message",
-		jobs: []
+		jobs: [],
 	}),
 	getters: {
 		numberOfSkills: (state): number => {
@@ -24,14 +24,14 @@ export const appStore = defineStore("appStore", {
 	},
 	actions: {
 		async fill() {
-			this.skills = await AppModel.getSkills();
 			this.jobs = await AppModel.getJobs();
+			this.skills = await AppModel.getSkills();
 		},
 		deleteSkill(skill: Skill) {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
 		},
 		setAppMessage(text: string) {
 			this.appMessage = text;
-		}
+		},
 	},
 })(piniaInstance);

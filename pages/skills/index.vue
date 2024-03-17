@@ -23,7 +23,7 @@ for (const _rawSkill of _rawSkills) {
 		name: _rawSkill.name,
 		url: _rawSkill.url,
 		description: _rawSkill.description,
-		importance: "somewhatUseful",
+		rank: 3
 	};
 	_skills.push(_skill);
 }
