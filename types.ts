@@ -29,7 +29,7 @@ export type Area = "firstArea" | "secondArea";
 export const NewJobSchema = z.object({
 	title: z.string(),
 	company: z.string(),
-	url: z.string().url(),
+	url: z.string(),
 	description: z.string(),
 	skillList: z.string(),
 	publicationDate: z.string(),
@@ -40,7 +40,7 @@ export const JobSchema = z.object({
 	id: z.number(),
 	title: z.string(),
 	company: z.string(),
-	url: z.string().url(),
+	url: z.string().regex(/^https?:\/\/(?:www\.)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?$/),
 	description: z.string(),
 	skillList: z.string(),
 	publicationDate: z.string(),

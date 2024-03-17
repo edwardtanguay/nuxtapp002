@@ -11,7 +11,7 @@ import { appStore } from "~/stores/AppStore";
 		<ul>
 			<li v-for="frontendJob in appStore.frontendJobs">
 				<span class="font-semibold">{{ frontendJob.title }}</span> -
-				{{ frontendJob.company }}
+				{{ frontendJob.company }} ({{ frontendJob.url }})
 			</li>
 		</ul>
 	</div>

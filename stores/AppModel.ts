@@ -5,7 +5,7 @@ import {
 	type Skill,
 	JobSchema,
 } from "~/types";
-import * as tools from "~/tools";
+import * as tools from "../tools";
 
 const buildJobsFromRawJobs = (rawJobs: any[]): Job[] => {
 	const jobs: Job[] = [];
@@ -14,7 +14,7 @@ const buildJobsFromRawJobs = (rawJobs: any[]): Job[] => {
 			id: rawJob.id,
 			title: rawJob.title,
 			company: rawJob.company,
-			url: rawJob.url,
+			url: rawJob.url, 
 			description: rawJob.description,
 			skillList: rawJob.skillList,
 			publicationDate: rawJob.publicationDate,

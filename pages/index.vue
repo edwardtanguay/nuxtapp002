@@ -13,7 +13,7 @@ message.value =
 		<!-- <p>appName: {{ appName }}</p> -->
 		<p>{{ message }}</p>
 		<DevOnly>
-			<div class="bg-red-500 p-6 w-fit mt-6 rounded font-bold">
+			<div class="bg-gray-400 p-6 w-fit mt-6 rounded font-bold">
 				This is developer information inside the DevOnly element. It
 				won't be shown in production.
 			</div>
