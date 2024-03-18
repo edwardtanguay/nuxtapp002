@@ -1,8 +1,8 @@
 - x blank jobs site
 - x set up lowdb api
 - x display on jobs site
-- .. implement: job, newJob (no id), frontendJobs (isOpen) with Zod (repeated)
-- implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
+- x implement: job, newJob (no id), frontendJobs (isOpen) with Zod (repeated)
+- .. implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
 - job isOpen and delete
 
 - implememnt Pinia, have jobs that you don't load or fix
@@ -20,3 +20,6 @@
 - make MongoDB solution
 - create datapod core and implement
 - ** datapod: add books.dpod.txt file, can immediately edit
+
+
+- solve: Hydration node mismatch
