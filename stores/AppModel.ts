@@ -47,7 +47,7 @@ export const getFrontendJobs = async () => {
 	return new Promise<FrontendJob[]>((resolve, reject) => {
 		(async () => {
 			try {
-				const url = "http://localhost:4011/api/jobs";
+				const url = "api/jobs";
 				const rawJobs: any[] = await $fetch(url);
 				const jobs = buildJobsFromRawJobs(rawJobs);
 				const frontendJobs = buildFrontendJobsFromJobs(jobs);
