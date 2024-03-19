@@ -14,7 +14,7 @@ const buildJobsFromRawJobs = (rawJobs: any[]): Job[] => {
 			id: rawJob.id,
 			title: rawJob.title,
 			company: rawJob.company,
-			url: rawJob.url, 
+			url: rawJob.url,
 			description: rawJob.description,
 			skillList: rawJob.skillList,
 			publicationDate: rawJob.publicationDate,
@@ -47,11 +47,11 @@ export const getFrontendJobs = async () => {
 	return new Promise<FrontendJob[]>((resolve, reject) => {
 		(async () => {
 			try {
-				const url = "api/jobs";
+				const url = "/api/jobs";
 				const rawJobs: any[] = await $fetch(url);
 				const jobs = buildJobsFromRawJobs(rawJobs);
 				const frontendJobs = buildFrontendJobsFromJobs(jobs);
-				tools.devLog(`there are ${frontendJobs.length} jobs`)
+				tools.devLog(`there are ${frontendJobs.length} jobs`);
 				resolve(frontendJobs);
 			} catch (e) {
 				reject(e);
