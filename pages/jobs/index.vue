@@ -3,7 +3,7 @@ import { appStore } from "~/stores/AppStore";
 import type { FrontendJob} from "~/types";
 
 const handleToggleJob = (frontendJob: FrontendJob) => {
-	alert('open it: ' + frontendJob.title);
+	frontendJob.isOpen = !frontendJob.isOpen;
 }
 </script>
 
@@ -20,7 +20,7 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 			>
 				<div
 				@click="handleToggleJob(frontendJob)"
-					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between cursor-pointer"
+					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between cursor-pointer opacity-90 hover:opacity-100"
 				>
 					<div class="font-semibold">{{ frontendJob.title }}</div>
 					<div class="text-slate-700">
