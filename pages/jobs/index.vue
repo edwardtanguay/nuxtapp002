@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { appStore } from "~/stores/AppStore";
+import type { FrontendJob} from "~/types";
+
+const handleToggleJob = (frontendJob: FrontendJob) => {
+	alert('open it: ' + frontendJob.title);
+}
 </script>
 
 <template>
@@ -14,14 +19,15 @@ import { appStore } from "~/stores/AppStore";
 				class="mb-3 w-[40rem]"
 			>
 				<div
-					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between"
+				@click="handleToggleJob(frontendJob)"
+					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between cursor-pointer"
 				>
 					<div class="font-semibold">{{ frontendJob.title }}</div>
 					<div class="text-slate-700">
 						{{ frontendJob.publicationDate }}
 					</div>
 				</div>
-				<div class="bg-slate-300 pb-2 pt-1 px-3 rounded-b-lg">
+				<div v-if="frontendJob.isOpen" class="bg-slate-300 pb-2 pt-1 px-3 rounded-b-lg">
 					<div class="flex gap-2">
 						<div class="font-semibold italic">
 							{{ frontendJob.company }}
