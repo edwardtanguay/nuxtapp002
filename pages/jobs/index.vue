@@ -45,6 +45,7 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 						</div>
 						<div class="iconArea">
 							<Icon
+							@click="appStore.deleteJob(frontendJob)"
 								class="hover:text-red-900 cursor-pointer text-xl text-slate-800"
 								name="ic:baseline-delete-forever"
 							/>
