@@ -3,10 +3,11 @@
 - x display on jobs site
 - x implement: job, newJob (no id), frontendJobs (isOpen) with Zod (repeated)
 - x implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
-- .. job isOpen and delete
+- x job isOpen
 	- x make top/bottom areas
 	- x full info on bottom
-	- .. link with icon
+	- x link with icon
+- .. job delete
 
 - implememnt Pinia, have jobs that you don't load or fix, notify developer
 
