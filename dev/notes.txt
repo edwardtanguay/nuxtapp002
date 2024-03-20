@@ -2,22 +2,23 @@
 - x set up lowdb api
 - x display on jobs site
 - x implement: job, newJob (no id), frontendJobs (isOpen) with Zod (repeated)
-- .. implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
-- job isOpen and delete
+- x implememnt Zod with extend: https://github.com/colinhacks/zod/discussions/2206
+- .. job isOpen and delete
 
 - implememnt Pinia, have jobs that you don't load or fix
 
 - make delete on frontend as on vue showcase
 - make local/online versions
-- change to skills and frontendSkills
-- skills: open/close
+- make mongo version
+
+- make full UX/CRUD on frontend
 - delete:
 	- add yes/no
 	- toaster message which one was deleted: https://www.npmjs.com/package/vue3-toastify
-- do full crud: 
 	- edit
 	- add
-- make MongoDB solution
+
+- create simple site which has: showcases, templates, datapods for Nuxt, Vue, Python, etc. (in table format)
 - create datapod core and implement
 - ** datapod: add books.dpod.txt file, can immediately edit
 
