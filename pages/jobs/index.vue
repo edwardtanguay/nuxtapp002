@@ -5,6 +5,11 @@ import type { FrontendJob } from "~/types";
 const handleToggleJob = (frontendJob: FrontendJob) => {
 	frontendJob.isOpen = !frontendJob.isOpen;
 };
+const handleDeleteJob = (frontendJob: FrontendJob) => {
+	if (!frontendJob.isProcessing) {
+		appStore.deleteJob(frontendJob);
+	}
+};
 </script>
 
 <template>
@@ -60,10 +65,7 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 						</div>
 						<div class="iconArea">
 							<Icon
-								@click="
-									!frontendJob.isProcessing &&
-										appStore.deleteJob(frontendJob)
-								"
+								@click="handleDeleteJob(frontendJob)"
 								:class="`${
 									!frontendJob.isProcessing &&
 									'hover:text-red-900 cursor-pointer'

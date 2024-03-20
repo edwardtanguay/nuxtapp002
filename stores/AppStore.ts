@@ -38,8 +38,9 @@ export const appStore = defineStore("appStore", {
 		},
 		async deleteJob(frontendJob: FrontendJob) {
 			frontendJob.isProcessing = true;
-			const response = await AppModel.deleteJob(frontendJob);
+			const deletedJob = await AppModel.deleteJob(frontendJob);
 			frontendJob.isProcessing = false;
+			return deletedJob;
 		},
 		deleteSkill(skill: Skill) {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
