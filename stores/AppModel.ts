@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
 	SkillSchema,
 	type FrontendJob,
@@ -47,8 +48,7 @@ export const getFrontendJobs = async () => {
 	return new Promise<FrontendJob[]>((resolve, reject) => {
 		(async () => {
 			try {
-				const url = "/api/jobs";
-				const rawJobs: any[] = await $fetch(url);
+				const rawJobs: any[] = await $fetch("/api/jobs");
 				const jobs = buildJobsFromRawJobs(rawJobs);
 				const frontendJobs = buildFrontendJobsFromJobs(jobs);
 				tools.devLog(`there are ${frontendJobs.length} jobs`);
@@ -64,27 +64,27 @@ export const deleteJob = (frontendJob: FrontendJob) => {
 	return new Promise<Job>((resolve, reject) => {
 		(async () => {
 			try {
-				if (true) {
-					const job = {
-						id: 3,
-						title: "Web Frontend Entwickler",
-						company: "EPI development",
-						url: "https://www.get-in-it.de/jobsuche/p132078?filter[thematic_priority]=5&filter[city][radius]=25&filter[city][city][0][lon]=13.41053&filter[city][city][0][lat]=52.52437&start=0&limit=39&ref=Jobsuche",
-						description:
-							"Die Herausforderung\n\n    Erstellung einer Bedarfsanalyse für neue Funktionen mit einer selbsterklärenden UI Gestaltung\n    Entwickeln von Funktionen und Algorithmen die nachhaltig lesbar sind\n    Der Fokus liegt in der Vereinfachung komplexer Vorgänge\n\nDeine Aufgaben\n\n    Weiterentwicklung von epirent aufgrund von aktuellen Anforderungen\n    Im Team Lösungen für neue Funktionen erarbeiten\n    Erstellen von gut bedienbaren und ausgeklügelten UI, denke wie ein Anwender\n    Kommunikation im Team, einbringen eigener Ideen\n    Offener Umgang mit neuen Technologien\n    Kreativität ist gefragt\n\nDeine Fähigkeiten\n\n    Weitreichende Erfahrungen in der Anwendungsprogrammierung\n    Klare und selbsterklärende UI Designs erstellen\n    Komplizierte technische Zusammenhänge auf einfache Funktionen herunterbrechen\n    Kommunikativ im Team, zielorientiert und selbständig in der Arbeitsorganisation\n    Deine Sprachkenntnisse (optimal): JavaScript, CSS, HTML, Bootstrap, AngularJS, API Entwicklung (REST), Responsive Design / Progressive Apps\n    Kein Hochschulabschluss notwendig, Können zählt!",
-						skillList: "angular, bootstrap, rest, responsive, pwa",
-						publicationDate: "2022-11-17",
-					};
-					setTimeout(() => {
+				setTimeout(async () => {
+					const response = await axios.delete(
+						`/api/jobs/${frontendJob.id}`
+					);
+					if (response.status === 200) {
+						const job: Job = response.data;
 						resolve(job);
-					}, 2000);
-				} else {
-					setTimeout(() => {
-						reject("Job could not be deleted. Please contact administrator of site.");
-					}, 2000);
-				}
+					} else {
+						reject(
+							`Job with ID ${frontendJob.id} could not be deleted. Please contact administrator of site.`
+						);
+					}
+				}, 2000);
 			} catch (e) {
-				reject(e);
+				console.log(`DELETE JOB ERROR`, {
+					error: e,
+					frontendJob,
+				});
+				reject(
+					`Job with ID ${frontendJob.id} could not be deleted. Please contact administrator of site.`
+				);
 			}
 		})();
 	});

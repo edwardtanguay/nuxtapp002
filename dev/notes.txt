@@ -7,17 +7,14 @@
 	- x make top/bottom areas
 	- x full info on bottom
 	- x link with icon
-- .. job delete
+- x job delete
 	- x add trash icon right
 	- x respond to deleted
 	- x respond to not deleted
-	- .. show toast: https://ui.nuxt.com/components/notification
-
+	- x show toast: https://ui.nuxt.com/components/notification
+- )) make local/online versions
 
 - implememnt Pinia, have jobs that you don't load or fix, notify developer
-
-- make delete on frontend as on vue showcase
-- make local/online versions
 - make mongo version
 
 - make full UX/CRUD on frontend

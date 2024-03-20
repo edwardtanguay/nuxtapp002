@@ -10,8 +10,8 @@ const handleDeleteJob = (frontendJob: FrontendJob) => {
 		(async () => {
 			try {
 				const deletedJob = await appStore.deleteJob(frontendJob);
-				alert(`deleted job "${deletedJob.title}`);
 			} catch (e) {
+				console.log('delete job error', e);
 				alert(e);
 			}
 		})();
