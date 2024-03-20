@@ -61,7 +61,15 @@ export const getFrontendJobs = async () => {
 };
 
 export const deleteJob = (frontendJob: FrontendJob) => {
-	console.log(`deleting job ${frontendJob.title}`);
+	return new Promise<string>((resolve, reject) => {
+		(async () => {
+			try {
+				resolve(`mock deleted job ${frontendJob.title}`)
+			} catch (e) {
+				reject(e);
+			}
+		})();
+	});
 } 
 
 export const getSkills = async () => {

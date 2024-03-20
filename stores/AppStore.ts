@@ -36,8 +36,9 @@ export const appStore = defineStore("appStore", {
 			this.frontendJobs = await AppModel.getFrontendJobs();
 			this.skills = await AppModel.getSkills();
 		},
-		deleteJob(frontendJob: FrontendJob) {
-			AppModel.deleteJob(frontendJob);
+		async deleteJob(frontendJob: FrontendJob) {
+			const response = await AppModel.deleteJob(frontendJob);
+			console.log(response);
 		},
 		deleteSkill(skill: Skill) {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);
