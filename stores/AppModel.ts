@@ -60,6 +60,10 @@ export const getFrontendJobs = async () => {
 	});
 };
 
+export const deleteJob = (frontendJob: FrontendJob) => {
+	console.log(`deleting job ${frontendJob.title}`);
+} 
+
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {
 		try {
