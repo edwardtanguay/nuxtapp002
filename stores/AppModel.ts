@@ -64,13 +64,15 @@ export const deleteJob = (frontendJob: FrontendJob) => {
 	return new Promise<string>((resolve, reject) => {
 		(async () => {
 			try {
-				resolve(`mock deleted job ${frontendJob.title}`)
+				setTimeout(() => {
+					resolve(`mock deleted job ${frontendJob.title}`);
+				}, 2000);
 			} catch (e) {
 				reject(e);
 			}
 		})();
 	});
-} 
+};
 
 export const getSkills = async () => {
 	return new Promise<Skill[]>((resolve, reject) => {

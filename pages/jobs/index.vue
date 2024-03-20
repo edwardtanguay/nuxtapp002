@@ -16,10 +16,15 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 		<div>
 			<div
 				v-for="frontendJob in appStore.frontendJobs"
-				class="mb-3 w-[40rem]"
+				:class="`mb-3 w-[40rem] ${
+					frontendJob.isProcessing && 'opacity-30 select-none'
+				}`"
 			>
 				<div
-					@click="handleToggleJob(frontendJob)"
+					@click="
+						!frontendJob.isProcessing &&
+							handleToggleJob(frontendJob)
+					"
 					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between cursor-pointer opacity-90 hover:opacity-100"
 				>
 					<div class="font-semibold">{{ frontendJob.title }}</div>
@@ -36,17 +41,33 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 							<div class="font-semibold italic">
 								{{ frontendJob.company }}
 							</div>
-							<a :href="frontendJob.url" target="_blank">
+							<a
+								:href="frontendJob.url"
+								:class="`${
+									frontendJob.isProcessing &&
+									'pointer-events-none'
+								}`"
+								target="_blank"
+							>
 								<Icon
-									class="hover:text-green-900 cursor-pointer"
+									:class="`${
+										!frontendJob.isProcessing &&
+										'hover:text-green-900 cursor-pointer'
+									}`"
 									name="mdi:page-next-outline"
 								/>
 							</a>
 						</div>
 						<div class="iconArea">
 							<Icon
-							@click="appStore.deleteJob(frontendJob)"
-								class="hover:text-red-900 cursor-pointer text-xl text-slate-800"
+								@click="
+									!frontendJob.isProcessing &&
+										appStore.deleteJob(frontendJob)
+								"
+								:class="`${
+									!frontendJob.isProcessing &&
+									'hover:text-red-900 cursor-pointer'
+								} text-xl text-slate-800`"
 								name="ic:baseline-delete-forever"
 							/>
 						</div>

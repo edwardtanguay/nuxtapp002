@@ -37,7 +37,9 @@ export const appStore = defineStore("appStore", {
 			this.skills = await AppModel.getSkills();
 		},
 		async deleteJob(frontendJob: FrontendJob) {
+			frontendJob.isProcessing = true;
 			const response = await AppModel.deleteJob(frontendJob);
+			frontendJob.isProcessing = false;
 			console.log(response);
 		},
 		deleteSkill(skill: Skill) {
