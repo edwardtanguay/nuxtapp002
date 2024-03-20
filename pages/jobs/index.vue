@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { appStore } from "~/stores/AppStore";
-import type { FrontendJob} from "~/types";
+import type { FrontendJob } from "~/types";
 
 const handleToggleJob = (frontendJob: FrontendJob) => {
 	frontendJob.isOpen = !frontendJob.isOpen;
-}
+};
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 				class="mb-3 w-[40rem]"
 			>
 				<div
-				@click="handleToggleJob(frontendJob)"
+					@click="handleToggleJob(frontendJob)"
 					class="bg-slate-400 py-2 px-3 rounded-t-lg flex justify-between cursor-pointer opacity-90 hover:opacity-100"
 				>
 					<div class="font-semibold">{{ frontendJob.title }}</div>
@@ -27,17 +27,28 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 						{{ frontendJob.publicationDate }}
 					</div>
 				</div>
-				<div v-if="frontendJob.isOpen" class="bg-slate-300 pb-2 pt-1 px-3 rounded-b-lg">
-					<div class="flex gap-2">
-						<div class="font-semibold italic">
-							{{ frontendJob.company }}
+				<div
+					v-if="frontendJob.isOpen"
+					class="bg-slate-300 pb-2 pt-1 px-3 rounded-b-lg"
+				>
+					<div class="flex justify-between">
+						<div class="companyArea flex gap-2">
+							<div class="font-semibold italic">
+								{{ frontendJob.company }}
+							</div>
+							<a :href="frontendJob.url" target="_blank">
+								<Icon
+									class="hover:text-green-900 cursor-pointer"
+									name="mdi:page-next-outline"
+								/>
+							</a>
 						</div>
-						<a :href="frontendJob.url" target="_blank">
+						<div class="iconArea">
 							<Icon
-								class="hover:text-green-900 cursor-pointer"
-								name="mdi:page-next-outline"
+								class="hover:text-red-900 cursor-pointer text-xl text-slate-800"
+								name="ic:baseline-delete-forever"
 							/>
-						</a>
+						</div>
 					</div>
 					<div>{{ frontendJob.skillList }}</div>
 				</div>

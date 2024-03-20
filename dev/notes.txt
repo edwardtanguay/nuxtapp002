@@ -8,6 +8,8 @@
 	- x full info on bottom
 	- x link with icon
 - .. job delete
+	- .. add trash icon right
+	
 
 - implememnt Pinia, have jobs that you don't load or fix, notify developer
 
