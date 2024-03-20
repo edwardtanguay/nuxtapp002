@@ -7,7 +7,10 @@ const handleToggleJob = (frontendJob: FrontendJob) => {
 };
 const handleDeleteJob = (frontendJob: FrontendJob) => {
 	if (!frontendJob.isProcessing) {
-		appStore.deleteJob(frontendJob);
+		(async () => {
+			const deletedJob = await appStore.deleteJob(frontendJob);
+			alert(`deleted job "${deletedJob.title}`);
+		})();
 	}
 };
 </script>

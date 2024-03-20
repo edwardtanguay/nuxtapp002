@@ -1,7 +1,7 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
 import { piniaInstance } from "@/globals";
 import _rawSkills from "~/data/skills.json";
-import type { AppStore, FrontendJob, Skill } from "~/types";
+import type { AppStore, FrontendJob, Job, Skill } from "~/types";
 import * as AppModel from "./AppModel";
 
 export const useAuth = defineStore("auth", {});
@@ -36,11 +36,13 @@ export const appStore = defineStore("appStore", {
 			this.frontendJobs = await AppModel.getFrontendJobs();
 			this.skills = await AppModel.getSkills();
 		},
-		async deleteJob(frontendJob: FrontendJob) {
-			frontendJob.isProcessing = true;
-			const deletedJob = await AppModel.deleteJob(frontendJob);
-			frontendJob.isProcessing = false;
-			return deletedJob;
+		deleteJob(frontendJob: FrontendJob) {
+			return new Promise<Job>(async (resolve) => {
+				frontendJob.isProcessing = true;
+				const deletedJob = await AppModel.deleteJob(frontendJob);
+				this.frontendJobs = this.frontendJobs.filter((m) => m.id !== frontendJob.id);
+				resolve(deletedJob)
+			});
 		},
 		deleteSkill(skill: Skill) {
 			this.skills = this.skills.filter((m) => m.idCode !== skill.idCode);

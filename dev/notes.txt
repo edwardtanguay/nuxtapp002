@@ -11,6 +11,7 @@
 	- x add trash icon right
 	- .. respond to deleted
 	- respond to not deleted
+	- show toast: https://ui.nuxt.com/components/notification
 
 
 - implememnt Pinia, have jobs that you don't load or fix, notify developer
