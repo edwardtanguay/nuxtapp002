@@ -1,33 +1,6 @@
 {
   "jobs": [
     {
-      "id": 7,
-      "title": "Frontend Entwickler React Typescript",
-      "company": "ibi systems GmbH",
-      "url": "https://www.stepstone.de/stellenangebote--Frontend-Entwickler-React-Typescript-m-w-d-Regensburg-ibi-systems-GmbH--8924608-inline.html?rltr=2_2_25_seorl_m_0_0_0_0_1_0",
-      "description": "Deine Aufgaben\n\n    Technische Konzeption, Design und Implementierung neuer Features\n    Anpassung und kontinuierliche Optimierung bestehender Features\n    Agile Entwicklung mit Scrum und gitflow (inkl. Pull Requests)\n    Keine Scheu vor Frontend-nahen Entwicklungstätigkeiten im Backend\n    Idealerweise Umsetzung unserer UX-Designs\n\nUnser Stack\n\n    Architektur: Domain Driven Design, Microservices, Event-driven\n    Backend: .NET 6 (C#), Entity Framework Core, Hangfire, RabbitMQ\n    Frontend: React, Material UI (MUI), GraphQL (Apollo), Typescript sowie ASP.NET Web API (REST API)\n    Hosting: Docker, Kubernetes, Azure, OpenShift\n    Unit Tests mit NUnit\n    Moderne Entwicklungstools wie JetBrains Rider/WebStorm, Git und DevOps Server\n",
-      "skillList": "agile, scrum, gitflow, ux, domaindrivendesign, microservices, dotnet, entityframework, hangfire, rabbitmq, react, mui, graphql, apollo, typescript, aspnet, rest, docker, kubernetes, azure, openshift, nunit, rider, webstorm, devopserver, vue, angular",
-      "publicationDate": "2022-12-12"
-    },
-    {
-      "id": 9,
-      "title": "Junior-Softwareentwickler:in",
-      "company": "Qnips GmbH",
-      "url": "https://www.stepstone.de/stellenangebote--Junior-Softwareentwickler-in-Hannover-Qnips-GmbH--7783712-inline.html?rltr=5_5_25_seorl_m_0_0_0_0_1_0",
-      "description": "Du bringst viel Interesse an modernen IT-Systemen, neuen Frameworks & Programmiersprachen mit \nDu bist fit in der Programmierung und fühlst dich in einem der nachfolgenden Bereiche wohl. Wir finden den passenden Tech-Stack für dich! \n\n    Android: Kotlin und Jetpack Compose \n     iOS: Swift und Swift UI \n     Backend Development: C#, .NET, Google Firebase, Cloud functions \n     Hybride App Development: Flutter mit Dart \n     Web Development: Angular, TypeScript-Framworks\n\nIdealerweise besitzt Du Kenntnisse im Umgang mit (RESTful-) Webservices sowie Git als Versionsverwaltung.  \nDu hast ein großes Herz für gute User Experience, durchdachtes Interface Design oder state-of-the-art API-Design ",
-      "skillList": "kotlin, jetpackcompose, swift, csharp, dotnet, firebase, flutter, dart, angular, rest, git",
-      "publicationDate": "2022-12-14"
-    },
-    {
-      "id": 10,
-      "title": "Backend Developer Node/Typescript",
-      "company": "Interhyp Gruppe",
-      "url": "https://www.stepstone.de/stellenangebote--Backend-Developer-Typescript-Node-JS-m-w-d-Muenchen-Interhyp-Gruppe--9006012-inline.html?rltr=2_2_25_seorl_m_0_0_0_0_0_0",
-      "description": " wir dich unbedingt brauchen, da du unsere digitalen Produkte entwickelst – mit Technologien wie z. B. Typescript, Node.JS, Express, MongoDB, Rest.\n\n… unsere Product Owner voll und ganz auf dich als kompetente*n Ansprechpartner*in zählen.\n\n… wir nicht genug von deinem Feedback zu den User Storys kriegen können und du uns dabei hilfst, ein herausragendes Produkt für unsere Kund*innen zu schaffen.\n\n… du immer und immer wieder deine eigenen Ideen einbringst, um damit Qualität, technische Verbesserungen sowie neue Features voranzutreiben.\nUnd du passt perfekt zu uns, denn...\n\n… du hast mindestens zwei Jahre relevante Erfahrung in der Arbeit mit schnell skalierenden und komplexen Systemen.\n\n… über umfassende Erfahrung mit Typescript, Node.JS verfügst du bereits und besitzt idealerweise schon praktische Erfahrung mit Express, MongoDB, Rest.\n\n… als Teamplayer schlägt dein Herz dafür, Feedback zu erhalten und zu geben, um sowohl persönlich als auch als Software Engineer (m/w/d) zu wachsen.\n\n… du handelst lösungsorientiert, übernimmst aktiv Verantwortung und stellst dich gern neuen Herausforderungen.",
-      "skillList": "typescript, node, express, mongodb, rest",
-      "publicationDate": "2022-12-14"
-    },
-    {
       "id": 11,
       "title": "Full Stack Developer",
       "company": "ASAMBEAUTY GmbH",
@@ -44,15 +17,6 @@
       "description": "\n    Die Erfüllung der Aufgaben setzt ein abgeschlossenes Studium im MINT-Bereich voraus.\n    Des Weiteren werden Kenntnisse im Bereich Machine Learning sowie fortgeschrittene Programmierkenntnisse in einer objektorientierten Sprache (bevorzugt Python) vorausgesetzt.\n    Erfahrungen mit einschlägigen Frameworks und Werkzeugen zu Machine Learning und dem Python Scientific Stack sind wünschenswert (z.B. scikit-learn, TensorFlow, PyTorch).\n    Idealerweise verfügen Sie über Erfahrungen im Bereich Software Engineering und Testen.\n    Ein hohes Qualitätsbewusstsein, eine ausgeprägte Innvoations- und Lernbereitschaft sowie Eigeninitiative zeichnet Sie und Ihren Arbeitsstil aus.\n    Als zielorientierte Persönlichkeit gehen Sie analytisch vor und lösen Problemstellungen strukturiert.\n    Sie sind ein engagierter Teamplayer, bringen sich gerne ein und sind offen für Neues.\n",
       "skillList": "mint, machinelearning, python, oop, pythonsciencestack, scikitlearn, tensorflow, pytorch, testing",
       "publicationDate": "2022-12-15"
-    },
-    {
-      "id": 13,
-      "title": "Entwickler React / Cloud",
-      "company": "itdesign GmbH",
-      "url": "https://www.stepstone.de/stellenangebote--Remote-Software-Developer-Entwickler-React-Cloud-m-w-d-Tuebingen-bei-Stuttgart-Zwickau-Mainz-itdesign-GmbH--8056768-inline.html?rltr=12_12_25_seorl_m_0_0_0_0_0_0",
-      "description": "Das tun wir\n\n    Im Scrum Team konzipieren wir die Architektur und implementieren Features\n    Durch Code Review und Remote Pair Programming stellen wir die Code-Qualität sicher\n    Wir deployen die Microservices des Teams\n    Wir tauschen uns täglich über Herausforderungen und technische Trends über Collaborations Tools aus und lernen voneinander und miteinander\n\nDas bist du\n\n    In den Bereichen Softwarearchitektur, Web-Applikationen oder Server-Client-Systeme fühlst du dich wohl\n    Moderne JavaScript Frameworks, z.B. React, Vue, Angular oder Backend-Technologien wie Spring Boot sind deine Leidenschaft\n    Du brauchst beim Programmieren Ruhe und kannst dich zu Hause am besten konzentrieren\n    Du willst auch remote Teil eines unschlagbaren Teams sein\n\n",
-      "skillList": "scrum, codereview, pairprogramming, microservices, react, vue, angular, springboot",
-      "publicationDate": "2022-12-16"
     },
     {
       "id": 14,
